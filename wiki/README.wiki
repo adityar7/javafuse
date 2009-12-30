@@ -1,4 +1,4 @@
-#summary javafuse documentation
+﻿#summary javafuse documentation
 #labels Featured
 
 = Introduction =
@@ -39,12 +39,12 @@ buffer (which will be passed to the Sys Call only).
 
 = Dependencies =
 
-In order to run correctly, Linux kernel version >= 2.6.9 and a kernel module 
-from FUSE release >= 2.7.0 are needed.
+In order to run correctly, Linux kernel version >= 2.6.9 and a FUSE kernel 
+module >= 2.7.0 are needed.
 
 However, for maximum performance one should use the 'big_writes' mount option 
-for FUSE which requires Linux kernel version >= 2.6.26 and a kernel module 
-from FUSE release >= 2.8.0.
+for FUSE which requires Linux kernel version >= 2.6.26 and a FUSE kernel 
+module >= 2.8.0.
 
 Java 1.4 or greater is required for proper JNI functionality.
 
@@ -73,14 +73,16 @@ arguments, or in a configuration file whose path is passed instead. The class
 name (including package name) of the filesystem is a required argument so that
 the library can reference it's methods.
 
-Finally, run the "javafuse" executable. See nullfs_mount.sh for an example.
+See fs/nullfs for an example.
+
+Finally, run the "javafuse" executable. See util/nullfs_mount.sh for an example.
 
 
 = Similar Projects =
 
-There is an existing project (http://sourceforge.net/projects/fuse-j) that
-provides Java bindings for FUSE. One motivation for creating JavaFUSE was to
-ensure that the bindings are portable across different platforms, and work 
+There is an existing project (fuse-j) that provides Java bindings for FUSE but 
+it has been defunct for a while now. One motivation for creating JavaFUSE was 
+to ensure that the bindings are portable across different platforms, and work 
 with newer versions of FUSE (and are easy to update if the FUSE API changes).
 
 Also, JavaFUSE always copies every data structure (including those defined in 
@@ -88,9 +90,15 @@ the system or by FUSE) back and forth between the C and Java calls, as this
 information may be a necessity for some systems (for example, if they deal
 with meta-data structures).
 
+
 = Acknowledgements =
 
 This material is based upon work supported by the National Science Foundation 
 under Grant OCI-0722068. Any opinions, findings, and conclusions or 
 recommendations expressed in this material are those of the author(s) and do 
 not necessarily reflect the views of the National Science Foundation.
+
+
+= Author =
+
+Aditya Rajgarhia (aditya at cs dot stanford dot edu)
