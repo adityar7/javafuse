@@ -1,5 +1,7 @@
-General Information
-===================
+﻿#summary javafuse documentation
+#labels Featured
+
+= Introduction =
 
 JavaFUSE provides Java bindings for FUSE (http://fuse.sourceforge.net). It 
 allows filesystems to be written in a combination of C and Java by utilizing 
@@ -7,8 +9,8 @@ the FUSE library, while aiming to provide maximum portability, flexibility,
 and ease of use.
 
 
-Features
-========
+= Features =
+
 The C library works as following: for each FUSE callback, a corresponding
 user-defined Java method (Pre Call) is invoked. Then, the corresponding native
 system call (Sys Call) is invoked. Finally, another user-defined Java method
@@ -35,8 +37,7 @@ Only parameter will hence copy all the parameters except the actual data
 buffer (which will be passed to the Sys Call only).
 
 
-Dependencies
-============
+= Dependencies =
 
 In order to run correctly, Linux kernel version >= 2.6.9 and a FUSE kernel 
 module >= 2.7.0 are needed.
@@ -48,22 +49,20 @@ module >= 2.8.0.
 Java 1.4 or greater is required for proper JNI functionality.
 
 
-Installation
-============
+= Installation =
 
-Edit the variables 'build.conf' to provide the correct parameters for your 
-system.
+Edit the variables 'build.conf' to provide the correct values for your system.
 
 Type 'make' to build the source code. This compiles the C code as well as
 wrapper classes written in Java. The JNI code is compiled into a shared
-library which is linked by the exectable.
+library which is linked by the exeuctable.
 
 Debugging flags may be removed from the Makefile if needed. (such as removing 
 the -g flag and passing -dNDEBUG to disable asserts).
 
 
-Usage
-=====
+= Usage =
+
 User defined Java filesystems must implement the "JavaFS" interface
 (fs/JavaFS.java), and the Java compiler must have the build directory in the
 classpath. A makefile is provided (fs/Makefile) which can be extended as
@@ -74,15 +73,16 @@ arguments, or in a configuration file whose path is passed instead. The class
 name (including package name) of the filesystem is a required argument so that
 the library can reference it's methods.
 
-Finally, run the "javafuse" executable. See nullfs_mount.sh for an example.
+See fs/nullfs for an example.
+
+Finally, run the "javafuse" executable. See util/nullfs_mount.sh for an example.
 
 
-Similar Projects
-================
+= Similar Projects =
 
-There is an existing project (http://sourceforge.net/projects/fuse-j) that
-provides Java bindings for FUSE. One motivation for creating JavaFUSE was to
-ensure that the bindings are portable across different platforms, and work 
+There is an existing project (fuse-j) that provides Java bindings for FUSE but 
+it has been defunct for a while now. One motivation for creating JavaFUSE was 
+to ensure that the bindings are portable across different platforms, and work 
 with newer versions of FUSE (and are easy to update if the FUSE API changes).
 
 Also, JavaFUSE always copies every data structure (including those defined in 
@@ -90,10 +90,15 @@ the system or by FUSE) back and forth between the C and Java calls, as this
 information may be a necessity for some systems (for example, if they deal
 with meta-data structures).
 
-Acknowledgements
-================
+
+= Acknowledgements =
 
 This material is based upon work supported by the National Science Foundation 
 under Grant OCI-0722068. Any opinions, findings, and conclusions or 
 recommendations expressed in this material are those of the author(s) and do 
 not necessarily reflect the views of the National Science Foundation.
+
+
+= Author =
+
+Aditya Rajgarhia (aditya at cs dot stanford dot edu)
