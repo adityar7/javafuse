@@ -16,10 +16,6 @@ CLASSPATH = ../build:$(builddir)
 nullfsdir = nullfs
 nullfs_sources = $(shell find $(nullfsdir) -type f -name '*.java')
 
-spadedir = spade
-spadedbenv = $(spadedir)/dbEnv
-spade_sources = $(shell find $(spadedir) -type f -name '*.java')
-
 all: $(builddir) NullFS
 
 $(builddir):
@@ -27,10 +23,6 @@ $(builddir):
 
 NullFS: $(nullfs_sources)
 	$(JAVAC) $(JFLAGS) -cp $(CLASSPATH) $^ -d $(builddir)
-
-SpadeFS: $(spade_sources)
-	mkdir -p $(spadedbenv)
-	$(JAVAC) $(JFLAGS) -cp $(CLASSPATH):$(JE_CLASSPATH) $^ -d $(builddir)
 
 clean:
 	rm -rf $(builddir)/$(spadedir)
