@@ -38,12 +38,12 @@ buffer (which will be passed to the Sys Call only).
 Dependencies
 ============
 
-In order to run correctly, Linux kernel version >= 2.6.9 and a kernel module 
-from FUSE release >= 2.7.0 are needed.
+In order to run correctly, Linux kernel version >= 2.6.9 and a FUSE kernel 
+module >= 2.7.0 are needed.
 
 However, for maximum performance one should use the 'big_writes' mount option 
-for FUSE which requires Linux kernel version >= 2.6.26 and a kernel module 
-from FUSE release >= 2.8.0.
+for FUSE which requires Linux kernel version >= 2.6.26 and a FUSE kernel 
+module >= 2.8.0.
 
 Java 1.4 or greater is required for proper JNI functionality.
 
@@ -51,11 +51,12 @@ Java 1.4 or greater is required for proper JNI functionality.
 Installation
 ============
 
-Edit the variables 'build.conf' to provide the correct values for your system.
+Edit the variables 'build.conf' to provide the correct parameters for your 
+system.
 
 Type 'make' to build the source code. This compiles the C code as well as
 wrapper classes written in Java. The JNI code is compiled into a shared
-library which is linked by the exeuctable.
+library which is linked by the exectable.
 
 Debugging flags may be removed from the Makefile if needed. (such as removing 
 the -g flag and passing -dNDEBUG to disable asserts).

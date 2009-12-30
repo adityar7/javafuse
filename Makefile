@@ -15,7 +15,7 @@ LDFLAGS = `pkg-config --libs fuse` $(shell java -jar util/DumpJVMLdPath.jar) -lj
 JAVAC = javac
 JAVA = java
 JFLAGS = -Xlint -source 5
-INCLUDES = -I$(includedir) -I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/linux
+INCLUDES = -I$(includedir) -I$(JDK_HOME)/include -I$(JDK_HOME)/include/linux
 CLASSPATH = $(builddir)
 
 vpath %.c $(srcdir)
