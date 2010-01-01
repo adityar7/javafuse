@@ -3,28 +3,28 @@
 
 == Errors ==
 
-1. Why do I get:
-	./javafuse: error while loading shared libraries: libjvm.so: cannot open shared object file: No such file or directory
+*1.* Why do I get:
+*	./javafuse: error while loading shared libraries: libjvm.so: cannot open shared object file: No such file or directory*
 
 
 The shared library libjvm.so could not be found. Add the folder containing that file to the environment vairable LD_LIBRARY_PATH. See nullfs_mount.sh for an example of how to tackle this.
 
 
-2. Why do I get:
-    ./javafuse: error while loading shared libraries: libjavafuse.so: cannot open shared object file: No such file or directory
+*2.* Why do I get:
+*    ./javafuse: error while loading shared libraries: libjavafuse.so: cannot open shared object file: No such file or directory*
 
 
 The shared library libjavafuse.so could not be found. Add the "build" folder to the environment vairable LD_LIBRARY_PATH. See nullfs_mount.sh    for an example of how to tackle this.
 
 
-3. Why do I get:
-	WARNING in native method: JNI call made with exception pending<br>
-	javafuse: src/native/fsClass.c:35: init_fsClass: Assertion `fuseSt.fsClass != ((void *)0)' failed.
+*3.* Why do I get:
+*	`WARNING in native method: JNI call made with exception pending`<br>
+	`javafuse: src/native/fsClass.c:35: init_fsClass: Assertion `fuseSt.fsClass != ((void *)0)' failed.`*
 
 
 The Java class implementing the file system could not be found. Either an incorrect name for the package/class name was specified, or the class was not compiled. For instance, to compile the NullFS filesystem, do:
-
+*
 	cd fs<br>
 	make
-
+*
 Note that the "javafuse" executable must be passed the -C flag with a PackageName/ClassName value (see nullfs_mount.sh). Alternatively, the CLASSNAME option can be set in the config file for the filesystem (see fs/nullfs/nullfs.config).
