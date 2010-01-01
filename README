@@ -1,4 +1,7 @@
-﻿= Introduction =
+﻿#summary javafuse documentation
+#labels Featured
+
+= Introduction =
 
 JavaFUSE provides Java bindings for FUSE (http://fuse.sourceforge.net). It 
 allows filesystems to be written in a combination of C and Java by utilizing 
@@ -87,7 +90,8 @@ The design of JavaFUSE is different from other language bindings in that the
 user executes a C program which then calls the Java methods, as opposed to 
 the user executing a Java (or whatever language the bindings may provide) 
 program which calls the C function fuse_mount. The JavaFUSE approach allows 
-system calls for each callback to be made without additional JNI code.
+the inclusion of C code (including native system calls) without the need for 
+the developer to write any additional JNI code.
 
 JavaFUSE can be made to work like fuse-j by simply turning off the Sys Call 
 and Post Call options in the configuration file.
