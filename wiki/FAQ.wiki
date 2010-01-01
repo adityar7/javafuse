@@ -3,19 +3,20 @@
 
 = Error messages =
 
-*./javafuse: error while loading shared libraries: libjvm.so: cannot open shared object file: No such file or directory*
+<br>
+*{{{./javafuse: error while loading shared libraries: libjvm.so: cannot open shared object file: No such file or directory}}}*
 
 The shared library libjvm.so could not be found. Add the folder containing that file to the environment vairable LD_LIBRARY_PATH. See nullfs_mount.sh for an example of how to tackle this.
 
-
-===Error message "./javafuse: error while loading shared libraries: libjavafuse.so: cannot open shared object file: No such file or directory"===
+<br>
+*{{{./javafuse: error while loading shared libraries: libjavafuse.so: cannot open shared object file: No such file or directory}}}*
 
 
 The shared library libjavafuse.so could not be found. Add the "build" folder to the environment vairable LD_LIBRARY_PATH. See nullfs_mount.sh for an example of how to tackle this.
 
-
-===Error message "WARNING in native method: JNI call made with exception pending<br>
-	{{{javafuse: src/native/fsClass.c:35: init_fsClass: Assertion `fuseSt.fsClass != ((void *)0)' failed.}}}"===
+<br>
+*{{{WARNING in native method: JNI call made with exception pending}}}<br>
+{{{javafuse: src/native/fsClass.c:35: init_fsClass: Assertion `fuseSt.fsClass != ((void *)0)' failed.}}}*
 
 
 The Java class implementing the file system could not be found. Either an incorrect name for the package/class name was specified, or the class was not compiled. For instance, to compile the NullFS filesystem, do:
