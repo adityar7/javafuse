@@ -1,7 +1,4 @@
-﻿#summary javafuse documentation
-#labels Featured
-
-= Introduction =
+﻿= Introduction =
 
 JavaFUSE provides Java bindings for FUSE (http://fuse.sourceforge.net). It 
 allows filesystems to be written in a combination of C and Java by utilizing 
@@ -21,7 +18,7 @@ may modify data that is then passed to the Post Call (along with the return
 value of the Sys Call).
 
 None of these three calls are required, however, and can be turned on or off
-using a configuration file.
+using a configuration file, as described below in the Usage section.
 
 The rationale for the above behavior is that very often, FUSE filesystems
 extend the functionality of the underlying native filesystem, and utilize the
@@ -73,7 +70,8 @@ arguments, or in a configuration file whose path is passed instead. The class
 name (including package name) of the filesystem is a required argument so that
 the library can reference it's methods.
 
-See fs/nullfs for an example.
+See the fs/nullfs directory for an example of a filesystem (in which the Java 
+methods do nothing) and the associated configuration file.
 
 Finally, run the "javafuse" executable. See util/nullfs_mount.sh for an example.
 
@@ -84,6 +82,15 @@ There is an existing project (fuse-j) that provides Java bindings for FUSE but
 it has been defunct for a while now. One motivation for creating JavaFUSE was 
 to ensure that the bindings are portable across different platforms, and work 
 with newer versions of FUSE (and are easy to update if the FUSE API changes).
+
+The design of JavaFUSE is different from other language bindings in that the 
+user executes a C program which then calls the Java methods, as opposed to 
+the user executing a Java (or whatever language the bindings may provide) 
+program which calls the C function fuse_mount. The JavaFUSE approach allows 
+system calls for each callback to be made without additional JNI code.
+
+JavaFUSE can be made to work like fuse-j by simply turning off the Sys Call 
+and Post Call options in the configuration file.
 
 Also, JavaFUSE always copies every data structure (including those defined in 
 the system or by FUSE) back and forth between the C and Java calls, as this 
