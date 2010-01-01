@@ -1,4 +1,4 @@
-﻿#summary javafuse documentation
+﻿#summary JavaFUSE Documentation
 #labels Featured
 
 = Introduction =
