@@ -104,10 +104,7 @@ with meta-data structures).
 
 = Acknowledgements =
 
-This material is based upon work supported by the National Science Foundation 
-under Grant OCI-0722068. Any opinions, findings, and conclusions or 
-recommendations expressed in this material are those of the author(s) and do 
-not necessarily reflect the views of the National Science Foundation.
+This material is based upon work supported by the National Science Foundation under Grant OCI-0722068. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
 
 
 = Author =
