@@ -25,3 +25,8 @@ The Java class implementing the file system could not be found. Either an incorr
 	make
 
 Note that the "javafuse" executable must be passed the -C flag with a PackageName/ClassName value (see nullfs_mount.sh). Alternatively, the CLASSNAME option can be set in the config file for the filesystem (see fs/nullfs/nullfs.config).
+
+
+= Acknowledgements =
+
+This material is based upon work supported by the National Science Foundation under Grant OCI-0722068. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
